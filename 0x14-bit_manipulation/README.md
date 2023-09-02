@@ -1,1 +1,1 @@
-A repo for alx C programming
+Learning C bit manipulation
