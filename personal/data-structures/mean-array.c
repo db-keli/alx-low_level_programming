@@ -11,7 +11,7 @@ int main(void)
         printf("\n arr[%d] = ", i);
         scanf("%d", &arr[i]);
     }
-
+    
     sum = 0;
     for (i = 0; i < n; i++)
     {
