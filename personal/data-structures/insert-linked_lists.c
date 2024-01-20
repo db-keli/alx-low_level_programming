@@ -7,7 +7,24 @@ typedef struct Node {
     struct Node *next;
 } Node;
 
-void insert_end(Node **root, int value);
+void insert_end(Node **root, int value){
+    Node *new_node = malloc(sizeof(Node));
+    if (new_node == NULL){
+        exit(1);
+    }
+    new_node->next = NULL;
+    new_node->data = value;
+    
+    if(root == NULL){
+        *root = new_node;
+    }
+
+    Node *curr = *root;
+    while(curr->next != NULL ){
+        curr = curr->next;
+    }
+    curr->next = new_node;
+}
 
 int main(int argc, char* argv[])
 {
@@ -19,26 +36,11 @@ int main(int argc, char* argv[])
     root->data = 23;
     root->next = malloc(sizeof(struct Node));
     root->next->data = 56;
-    root->next->next->next = NULL;
+    root->next->next = NULL;
     
-    insert_end()
+    insert_end(&root, 4);
 
     for(Node *curr = root; curr != NULL; curr = curr->next){
         printf("%d\n", curr->data);
     }
-}
-
-void insert(Node *root, int value){
-    Node *new_node = malloc(sizeof(Node));
-    if (new_node == NULL){
-        exit(1);
-    }
-    new_node->next = NULL;
-    new_node->data = value;
-    
-    Node *curr = new_node;
-    while(curr!=NULL){
-        curr = curr->next;
-    }
-    curr->next = new_node;
 }
