@@ -28,6 +28,24 @@ int main(int argc, char* argv[])
         curr = curr->next;
     }
 
+
+    int val = 4;
+    Node* pos;
+
+    while (curr != NULL)
+    {
+        if (val == curr->data)
+        {
+            pos = curr;
+            printf("Value: %d\n is available", pos->data);
+            break;
+        }
+        else
+            curr = curr->next;
+    }
+
+    pos = NULL;
+
     free(root.next->next);
     free(root.next);
 
