@@ -7,6 +7,8 @@ typedef struct Node {
     struct Node *next;
 } Node;
 
+Node* head;
+
 void insert_end(Node **root, int value){
     Node *new_node = malloc(sizeof(Node));
     if (new_node == NULL){
@@ -24,6 +26,16 @@ void insert_end(Node **root, int value){
         curr = curr->next;
     }
     curr->next = new_node;
+}
+
+void insert_beginning(Node* root, int value){
+    Node* temp = (Node*)malloc(sizeof(Node));
+
+    temp -> data = value;
+    temp -> next = NULL;
+
+    if( root == NULL) temp -> next = root;
+    root = temp;
 }
 
 int main(int argc, char* argv[])
