@@ -9,8 +9,14 @@ Node* insert(Node* root, int value, int position)
     if (position == 1){
         temp -> next = root;
         root = temp;
-        return;
+        return 0;
     }
-    
-    return root;
+
+    Node* temp2 = root;
+    for (int i = 0; position -2; i++){
+        temp2 = temp2 ->next;
+    }
+
+    temp -> next = temp2 -> next;
+    temp2 -> next = temp; 
 }

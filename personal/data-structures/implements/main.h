@@ -11,3 +11,4 @@ Node* traverse(Node* root);
 Node* insert_beginning(Node* root, int value);
 Node* insert_end(Node* root, int value);
 Node* insert(Node* root, int value, int position);
+Node* Delete(Node* root, int postion);

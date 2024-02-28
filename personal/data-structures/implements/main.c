@@ -9,7 +9,8 @@ int main()
     root -> next -> next = NULL;
 
     root = insert_beginning(root, 6);
-    root = insert_end(root, 89);
+    traverse(root);
+    Delete(root, 2);
 
     traverse(root);
 
